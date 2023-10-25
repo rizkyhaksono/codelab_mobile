@@ -2,6 +2,14 @@
 
 Ini adalah latihan kegiatan modul 3
 
+## Anggota Kelompok
+
+| No  | Nama Lengkap                                                     | NIM             |
+| --- | ---------------------------------------------------------------- | --------------- |
+| 1   | [Muhammad Rizky Haksono](https://github.com/rizkyhaksono)        | 202110370311325 |
+| 2   | [Geraldi Nathan Tommy Saputra](https://github.com/GeraldiNathan) | 202110370311351 |
+| 3   | [Rafli Kharisma Akbar](https://github.com/raflikharisma)         | 202110370311402 |
+
 ## Laporan Praktikum Modul 3
 
 1. Instalasi HTTP dan WebView
@@ -263,14 +271,6 @@ class WebView extends GetView<WebController> {
   }
 }
 ```
-
-## Anggota Kelompok
-
-| No  | Nama Lengkap                 | NIM             |
-| --- | ---------------------------- | --------------- |
-| 1   | Muhammad Rizky Haksono       | 202110370311325 |
-| 2   | Geraldi Nathan Tommy Saputra | 202110370311351 |
-| 3   | Rafli Kharisma Akbar         | 202110370311402 |
 
 ## Tampilan Akhir
 
