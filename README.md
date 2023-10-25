@@ -1,6 +1,6 @@
 # Codelab Mobile
 
-Ini adalah codelab mobile
+Ini adalah codelab mobile untuk Praktikum Pemrograman Mobile
 
 ## Modul
 
