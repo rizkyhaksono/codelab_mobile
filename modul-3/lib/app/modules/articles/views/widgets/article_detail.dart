@@ -51,7 +51,6 @@ class ArticleDetailPage extends StatelessWidget {
                   ElevatedButton(
                     child: const Text('Read more'),
                     onPressed: () {
-//comingsoon
                     },
                   ),
                 ],

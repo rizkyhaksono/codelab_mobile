@@ -8,30 +8,37 @@ class ArticleView extends GetView<ArticleController> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Obx(() {
-          if (controller.isLoading.value) {
-            return Center(
-              child: CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(
-                    Theme.of(context).colorScheme.secondary),
-              ),
-            );
-          } else {
-            return Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: controller.articles.length,
-                itemBuilder: (context, index) {
-                  var article = controller.articles[index];
-                  return CardArticle(article: article);
-                },
-              ),
-            );
-          }
-        }),
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black45,
+        title: const Text('Fetch Data Article'),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          Obx(() {
+            if (controller.isLoading.value) {
+              return Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(
+                      Theme.of(context).colorScheme.secondary),
+                ),
+              );
+            } else {
+              return Expanded(
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: controller.articles.length,
+                  itemBuilder: (context, index) {
+                    var article = controller.articles[index];
+                    return CardArticle(article: article);
+                  },
+                ),
+              );
+            }
+          }),
+        ],
+      ),
     );
   }
 }

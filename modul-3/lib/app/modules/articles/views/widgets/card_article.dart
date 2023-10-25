@@ -18,7 +18,7 @@ class CardArticle extends StatelessWidget {
             width: 150,
             height: 150,
             child: Image.network(
-              article.urlToImage!,
+              article.urlToImage ?? '',
             ),
           ),
         ),

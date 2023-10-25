@@ -1,6 +1,21 @@
-# modul3_fix
+# Modul 3 Codelab
 
-A new Flutter project.
+Ini adalah latihan kegiatan modul 3
+
+| No  | Nama Lengkap                 | NIM             |
+| --- | ---------------------------- | --------------- |
+| 1   | Muhammad Rizky Haksono       | 202110370311325 |
+| 2   | Geraldi Nathan Tommy Saputra | 202110370311351 |
+| 3   | Rafli Kharisma Akbar         | 202110370311402 |
+
+| No  | Fitur         | Gambar          |
+| --- | ------------- | --------------- |
+| 1   | Todos Page    | 202110370311325 |
+| 2   | Article Page  | 202110370311351 |
+| 3   | Github Page   | 202110370311402 |
+| 4   | Github Rizky  | 202110370311402 |
+| 5   | Github Rafli  | 202110370311402 |
+| 6   | Github Gerald | 202110370311402 |
 
 ## Getting Started
 
