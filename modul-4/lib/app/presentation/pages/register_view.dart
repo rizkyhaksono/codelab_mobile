@@ -1,25 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:modul4/app/presentation/controllers/auth_controller.dart';
+import 'package:modul4/app/presentation/controllers/form_controller.dart';
 import 'package:modul4/app/presentation/pages/login_view.dart';
 
-class RegisterPage extends StatefulWidget {
-  @override
-  State<RegisterPage> createState() => _RegisterPageState();
-}
-
-class _RegisterPageState extends State<RegisterPage> {
+class RegisterPage extends GetView<FormController> {
   final _authController = Get.put(AuthController());
-
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +20,11 @@ class _RegisterPageState extends State<RegisterPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TextField(
-              controller: _emailController,
+              controller: controller.emailController,
               decoration: InputDecoration(labelText: 'Email'),
             ),
             TextField(
-              controller: _passwordController,
+              controller: controller.passwordController,
               obscureText: true,
               decoration: InputDecoration(labelText: 'Password'),
             ),
@@ -50,12 +36,11 @@ class _RegisterPageState extends State<RegisterPage> {
                 onPressed: _authController.isLoading.value
                     ? null
                     : () {
-                  _authController.registerUser(
-                    _emailController.text,
-                    _passwordController.text,
-                  );
-
-                },
+                        _authController.registerUser(
+                          controller.emailController.text,
+                          controller.passwordController.text,
+                        );
+                      },
                 child: _authController.isLoading.value
                     ? CircularProgressIndicator()
                     : Text('Register'),

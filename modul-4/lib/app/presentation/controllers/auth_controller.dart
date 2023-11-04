@@ -14,7 +14,7 @@ class AuthController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    checkLoginStatus(); // Cek status login saat controller diinisialisasi
+    checkLoginStatus();
   }
 
   Future<void> checkLoginStatus() async {
@@ -31,7 +31,7 @@ class AuthController extends GetxController {
       Get.snackbar('Success', 'Registration successful',
           backgroundColor: Colors.green);
 
-      Get.off(LoginPage()); //Navigate ke Login Page
+      Get.off(LoginPage());
     } catch (error) {
       Get.snackbar('Error', 'Registration failed: $error',
           backgroundColor: Colors.red);
@@ -47,16 +47,14 @@ class AuthController extends GetxController {
         email: email,
         password: password,
       );
-      _prefs.setString(
-          'user_token', _auth.currentUser!.uid); // Simpan token autentikasi
+      _prefs.setString('user_token', _auth.currentUser!.uid);
 
       Get.snackbar('Success', 'Login successful',
           backgroundColor: Colors.green);
 
-      isLoggedIn.value = true; // Set status login menjadi true
+      isLoggedIn.value = true;
 
-      Get.offAllNamed(
-          '/home'); // Navigate ke HomePage atau ArticlePage dan hapus semua halaman sebelumnya
+      Get.offAllNamed('/dashboard');
     } catch (error) {
       Get.snackbar('Error', 'Login failed: $error',
           backgroundColor: Colors.red);
@@ -66,11 +64,10 @@ class AuthController extends GetxController {
   }
 
   void logout() {
-    _prefs.remove('user_token'); // Hapus token autentikasi dari penyimpanan
-    isLoggedIn.value = false; // Set status login menjadi false
-    _auth.signOut(); // Sign out dari Firebase Authentication
+    _prefs.remove('user_token');
+    isLoggedIn.value = false;
+    _auth.signOut();
 
-    Get.offAllNamed(
-        '/login'); // Navigate ke HomePage dan hapus semua halaman sebelumnya
+    Get.offAllNamed('/home');
   }
 }

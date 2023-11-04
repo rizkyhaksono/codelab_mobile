@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
 import 'package:modul4/app/presentation/controllers/home_controller.dart';
 
-class HomeBinding extends Bindings {
+class DashboardBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<HomeController>(
-      () => HomeController(),
-    );
+    // Get.lazyPut<LoginBinding>(
+    //   () => LoginBinding(),
+    // );
   }
 }

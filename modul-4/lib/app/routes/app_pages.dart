@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:modul4/app/presentation/bindings/auth_binding.dart';
-import 'package:modul4/app/presentation/bindings/login_binding.dart';
+import 'package:modul4/app/presentation/bindings/dashboard_binding.dart';
+import 'package:modul4/app/presentation/pages/dashboard_view.dart';
 import 'package:modul4/app/presentation/pages/home_view.dart';
 import 'package:modul4/app/presentation/pages/login_view.dart';
 import 'package:modul4/app/presentation/pages/register_view.dart';
@@ -15,8 +16,7 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => const HomeView(),
-      binding: HomeBinding(),
+      page: () => const HomePage(),
     ),
     GetPage(
       name: _Paths.LOGIN,
@@ -28,5 +28,10 @@ class AppPages {
       page: () => RegisterPage(),
       binding: AuthBinding(),
     ),
+    GetPage(
+      name: _Paths.DASHBOARD,
+      page: () => DashboardPage(),
+      binding: DashboardBinding(),
+    )
   ];
 }

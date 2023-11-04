@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
 import 'package:modul4/app/presentation/controllers/auth_controller.dart';
+import 'package:modul4/app/presentation/controllers/notification_handler.dart';
 import 'package:modul4/firebase_options.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -16,6 +17,8 @@ void main() async {
   );
 
   await Get.putAsync(() async => await SharedPreferences.getInstance());
+  await FirebaseMessagingHandler().initPushNotification();
+  await FirebaseMessagingHandler().initLocalNotification();
 
   final authController = Get.put(AuthController());
 
@@ -28,7 +31,7 @@ void main() async {
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system,
-      initialRoute: authController.isLoggedIn.value ? '/home' : '/login',
+      initialRoute: authController.isLoggedIn.value ? '/dashboard' : '/login',
       getPages: AppPages.routes,
       translationsKeys: const {
         'en_US': {
