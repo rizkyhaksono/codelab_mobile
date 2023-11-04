@@ -1,7 +1,9 @@
 import 'package:get/get.dart';
-
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
+import 'package:modul4/app/presentation/bindings/auth_binding.dart';
+import 'package:modul4/app/presentation/bindings/login_binding.dart';
+import 'package:modul4/app/presentation/pages/home_view.dart';
+import 'package:modul4/app/presentation/pages/login_view.dart';
+import 'package:modul4/app/presentation/pages/register_view.dart';
 
 part 'app_routes.dart';
 
@@ -15,6 +17,16 @@ class AppPages {
       name: _Paths.HOME,
       page: () => const HomeView(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOGIN,
+      page: () => LoginPage(),
+      binding: AuthBinding(),
+    ),
+    GetPage(
+      name: _Paths.REGISTER,
+      page: () => RegisterPage(),
+      binding: AuthBinding(),
     ),
   ];
 }
