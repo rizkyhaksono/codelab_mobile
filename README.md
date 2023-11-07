@@ -10,7 +10,7 @@ Ini adalah codelab mobile untuk Praktikum Pemrograman Mobile
 | 2   | [Geraldi Nathan Tommy Saputra](https://github.com/GeraldiNathan) | 202110370311351 |
 | 3   | [Rafli Kharisma Akbar](https://github.com/raflikharisma)         | 202110370311402 |
 
-## Codelab Modul
+## Overview Codelab
 
 | No  | Modul                                                                                         | Done |
 | --- | --------------------------------------------------------------------------------------------- | ---- |
@@ -18,5 +18,9 @@ Ini adalah codelab mobile untuk Praktikum Pemrograman Mobile
 | 2   | [Modul 2](https://github.com/rizkyhaksono/codelab_mobile/tree/main/modul-2)                   | ✅   |
 | 3   | [Laporan Praktikum Modul 3](https://github.com/rizkyhaksono/codelab_mobile/tree/main/modul-3) | ✅   |
 | 4   | [Modul 4](https://github.com/rizkyhaksono/codelab_mobile/tree/main/modul-4)                   | ✅   |
-| 5   | [Modul 5](https://github.com/rizkyhaksono/codelab_mobile/tree/main/modul-5)                   | WIP  |
-| 6   | [Modul 6](https://github.com/rizkyhaksono/codelab_mobile/tree/main/modul-5)                   | WIP  |
+| 5   | [Modul 5](https://github.com/rizkyhaksono/codelab_mobile/tree/main/modul-5)                   | ✅   |
+| 6   | [Modul 6](https://github.com/rizkyhaksono/codelab_mobile/tree/main/modul-5)                   | ✅   |
+
+## LICENSE
+
+[BSD 3-Clause "New" or "Revised" License ](https://github.com/rizkyhaksono/codelab_mobile/blob/main/LICENSE)
