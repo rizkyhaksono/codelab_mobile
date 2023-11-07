@@ -20,7 +20,7 @@ class StorageController extends ClientController {
         bucketId: '654911c40020efe3255f',
         fileId: ID.unique(),
         file: InputFile.fromPath(
-          path: './path-to-files/image.jpg',
+          path: file.path,
           filename: 'image.jpg',
         ),
       );

@@ -17,12 +17,15 @@ class DatabaseController extends ClientController {
       final result = await databases!.createDocument(
         databaseId: "65490e078487bd975337",
         documentId: ID.unique(),
-        collectionId: "65494a3eda3eb9f84ee3",
+        collectionId: "65490e21dfdfe3c9c2c5",
         data: map,
         permissions: [
-          Permission.read(Role.user("65491167b032afdfc914")),
-          Permission.update(Role.user("65491167b032afdfc914")),
-          Permission.delete(Role.user("65491167b032afdfc914")),
+          // Permission.read(Role.user("65491167b032afdfc914")),
+          // Permission.update(Role.user("65491167b032afdfc914")),
+          // Permission.delete(Role.user("65491167b032afdfc914")),
+          Permission.read(Role.any()), // Set read permission to "any"
+          Permission.update(Role.any()), // Set update permission to "any"
+          Permission.delete(Role.any()), // Set delete permission to "any"
         ],
       );
       print("DatabaseController:: storeUserName $result");

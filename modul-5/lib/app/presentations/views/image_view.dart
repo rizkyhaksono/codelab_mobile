@@ -21,10 +21,6 @@ class _ImageViewState extends State<ImageView> {
     setState(() {
       _image = pickedFile;
     });
-
-    if (_image != null) {
-      await storageController.storeImage(File(_image!.path));
-    }
   }
 
   List<String> _imageUrls = [];
@@ -34,6 +30,10 @@ class _ImageViewState extends State<ImageView> {
     setState(() {
       _imageUrls = images;
     });
+  }
+
+  void onInit() {
+    _fetchImages();
   }
 
   @override
