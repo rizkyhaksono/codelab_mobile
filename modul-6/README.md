@@ -1,16 +1,54 @@
-# modul6
+# Modul 6
 
-A new Flutter project.
+TESTING DAN BUILD APK
 
-## Getting Started
+# Materi
 
-This project is a starting point for a Flutter application.
+## Build APK Result
 
-A few resources to get you started if this is your first Flutter project:
+> App Release APK
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+/modul-6
+├── build
+│   ├── app
+│   │   ├── outputs
+│   │   │   ├── flutter-apk
+|   |   │   │   ├── app-release.apk
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> App Debug APK
+
+```
+/modul-6
+├── build
+│   ├── app
+│   │   ├── outputs
+│   │   │   ├── flutter-apk
+|   |   │   │   ├── app-debug.apk
+```
+
+## Result Testing
+
+```
+flutter test test/data/api_service_test.dart
+```
+
+> Unit Test
+> ![Unit Test](/assets/unit_test.png)
+
+```
+flutter test test/page/todo_page_test.dart
+```
+
+> Widget Test
+> ![Widget Test](/assets/widget_test.png)
+
+```
+flutter test integration_test/app_test.dart
+```
+
+> Integration Test
+> ![Integration Test](/assets/integration_test.png)
+
+# Codelab
