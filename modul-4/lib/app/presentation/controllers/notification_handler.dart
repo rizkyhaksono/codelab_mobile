@@ -43,7 +43,10 @@ class FirebaseMessagingHandler {
 
     //handler terminated message
     FirebaseMessaging.instance.getInitialMessage().then((message) {
-      print("terminatedNotification : ${message!.notification?.title}");
+      // print("terminatedNotification : ${message!.notification?.title}");
+      if (message != null && message.notification != null) {
+        print("terminatedNotification : ${message.notification!.title}");
+      }
     });
 
     //handler onbackground message
@@ -58,10 +61,13 @@ class FirebaseMessagingHandler {
         notification.title,
         notification.body,
         NotificationDetails(
-            android: AndroidNotificationDetails(
-                _androidChannel.id, _androidChannel.name,
-                channelDescription: _androidChannel.description,
-                icon: '@drawable/ic_launcher')),
+          android: AndroidNotificationDetails(
+            _androidChannel.id,
+            _androidChannel.name,
+            channelDescription: _androidChannel.description,
+            icon: '@mipmap/ic_launcher',
+          ),
+        ),
         payload: jsonEncode(message.toMap()),
       );
       print(
@@ -76,7 +82,7 @@ class FirebaseMessagingHandler {
 
   Future initLocalNotification() async {
     const ios = DarwinInitializationSettings();
-    const android = AndroidInitializationSettings('@drawable/ic_launcher');
+    const android = AndroidInitializationSettings('@mipmap/ic_launcher');
     const settings = InitializationSettings(android: android, iOS: ios);
 
     await _localNotification.initialize(settings);
