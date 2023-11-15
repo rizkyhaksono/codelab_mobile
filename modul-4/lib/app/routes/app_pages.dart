@@ -17,6 +17,7 @@ class AppPages {
     GetPage(
       name: _Paths.HOME,
       page: () => const HomePage(),
+      binding: AuthBinding(),
     ),
     GetPage(
       name: _Paths.LOGIN,
