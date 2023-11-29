@@ -43,14 +43,12 @@ class StorageController extends ClientController {
   Future<List<String>> listImages() async {
     try {
       final result = await storage!.listFiles(
-        bucketId: '654911c40020efe3255f', // Replace with your actual bucket ID
+        bucketId: '654911c40020efe3255f',
       );
       List<String> imageUrls = [];
       for (var file in result.files) {
-        // Generate the URL for viewing the file
         String imageUrl = storage!.getFileView(
-          bucketId:
-              '654911c40020efe3255f', // Replace with your actual bucket ID
+          bucketId: '654911c40020efe3255f',
           fileId: file.$id,
         ) as String;
         imageUrls.add(imageUrl);

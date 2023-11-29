@@ -23,9 +23,11 @@ class DatabaseController extends ClientController {
           // Permission.read(Role.user("65491167b032afdfc914")),
           // Permission.update(Role.user("65491167b032afdfc914")),
           // Permission.delete(Role.user("65491167b032afdfc914")),
-          Permission.read(Role.any()), // Set read permission to "any"
-          Permission.update(Role.any()), // Set update permission to "any"
-          Permission.delete(Role.any()), // Set delete permission to "any"
+
+          // config role any
+          Permission.read(Role.any()),
+          Permission.update(Role.any()),
+          Permission.delete(Role.any()),
         ],
       );
       print("DatabaseController:: storeUserName $result");

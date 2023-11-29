@@ -5,6 +5,7 @@ import 'package:modul5/app/presentations/controllers/database_controller.dart';
 class UsersView extends StatelessWidget {
   final DatabaseController databaseController = Get.put(DatabaseController());
   final TextEditingController nameController = TextEditingController();
+  final TextEditingController umurController = TextEditingController();
 
   UsersView({Key? key}) : super(key: key);
 
@@ -26,12 +27,23 @@ class UsersView extends StatelessWidget {
                 border: OutlineInputBorder(),
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
+            TextField(
+              controller: umurController,
+              decoration: InputDecoration(
+                labelText: 'Enter your umur',
+                border: OutlineInputBorder(),
+              ),
+            ),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 if (nameController.text.isNotEmpty) {
                   Map<String, dynamic> data = {
                     'name': nameController.text,
+                    'umur': umurController.text,
                   };
                   databaseController.storeUserName(data);
                 } else {
