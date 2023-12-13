@@ -69,4 +69,24 @@ class StorageController extends ClientController {
       return [];
     }
   }
+
+  Future<List<String>> listImagesFromAppwrite() async {
+    try {
+      final result = await storage!.listFiles(
+        bucketId: '654911c40020efe3255f',
+      );
+      List<String> imageUrls = [];
+      for (var file in result.files) {
+        String imageUrl = storage!.getFileView(
+          bucketId: '654911c40020efe3255f',
+          fileId: file.$id,
+        ) as String;
+        imageUrls.add(imageUrl);
+      }
+      return imageUrls;
+    } catch (error) {
+      print("Error listing images: $error");
+      return [];
+    }
+  }
 }

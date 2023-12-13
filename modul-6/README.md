@@ -38,7 +38,7 @@ flutter test test/data/api_service_test.dart
 > ![Unit Test](/assets/unit_test.png)
 
 ```
-flutter test test/page/todo_page_test.dart
+flutter test test/page/todo_view_test.dart
 ```
 
 > Widget Test

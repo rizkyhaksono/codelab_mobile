@@ -7,11 +7,8 @@ import 'package:modul6/app/data/model/articles.dart';
 
 import 'api_service_test.mocks.dart';
 
-// Generate a MockClient using the Mockito package.
-// Create new instances of this class in each test.
 @GenerateMocks([http.Client])
 void main() {
-  // Constants for API details
   const _apiKey = '8a9659ec17e64cef9b0a31dd2123885e';
   const _baseUrl = 'https://newsapi.org/v2/';
   const String _category = 'business';

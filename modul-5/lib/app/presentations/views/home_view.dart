@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:modul5/app/presentations/controllers/client_controller.dart';
 
 class HomeView extends GetView<ClientController> {
   HomeView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,35 +12,40 @@ class HomeView extends GetView<ClientController> {
         title: const Text('HomeView'),
         centerTitle: true,
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: () {
-                Get.toNamed('/signup');
-              },
-              child: const Text("Sign Up Page"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Get.toNamed('/users');
-              },
-              child: const Text("Users Page"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Get.toNamed('/realtime');
-              },
-              child: const Text("Realtime Page"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Get.toNamed('/storage');
-              },
-              child: const Text("Image Page"),
+            Expanded(
+              child: ListView(
+                children: [
+                  _buildButton("Sign Up Page", '/signup'),
+                  _buildButton("Users Page", '/users'),
+                  _buildButton("Realtime Page", '/realtime'),
+                  _buildButton("Image Page", '/storage'),
+                ],
+              ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildButton(String text, String route) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: ElevatedButton(
+        onPressed: () {
+          Get.toNamed(route);
+        },
+        style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.all(16.0),
+        ),
+        child: Text(
+          text,
+          style: TextStyle(fontSize: 18),
         ),
       ),
     );

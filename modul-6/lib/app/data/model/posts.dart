@@ -10,10 +10,10 @@ class Posts {
     required this.body,
   });
   factory Posts.fromJson(Map<String, dynamic> json) => Posts(
-        userId: json["userId"],
-        id: json["id"],
-        title: json["title"],
-        body: json["body"],
+        userId: json["userId"] ?? 0,
+        id: json["id"] ?? 0,
+        title: json["title"] ?? "",
+        body: json["body"] ?? "",
       );
   Map<String, dynamic> toJson() => {
         "userId": userId,
